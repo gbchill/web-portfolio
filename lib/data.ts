@@ -83,4 +83,12 @@ export const skillsData = [
   "TensorFlow",
   "Figma",
   "Tailwind CSS",
+  "OpenCV",
+  "MediaPipe",
+  "Supabase",
+  "FastAPI",
+  "Express.js",
+  "PostgreSQL",
+  "TypeScript",
+  "REST API",
 ] as const;
