@@ -1,7 +1,7 @@
 export const navItems = [
   { name: "Home", link: "#home" },
-  { name: "Projects", link: "#projects" },
   { name: "Experience", link: "#experience" },
+  { name: "Projects", link: "#projects" },
   { name: "Skills", link: "#skills" },
   { name: "Contact", link: "#contact" },
 ];
@@ -100,7 +100,7 @@ export const projects = [
     des: "AI outfit recommender based on occasions and real-time weather.",
     img: "/p4.jpg",
     iconLists: ["/nextjs.svg", "/python.svg", "/opencv.svg"],
-    link: "https://github.com/gbchill/lux-wardrobe",
+    link: "https://github.com/ashworks1706/DevHacks-2025",
   }    
 ];
 
