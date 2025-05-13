@@ -96,7 +96,7 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Lux - Smart Wardrobe Assistant",
+    title: "Lux",
     des: "AI outfit recommender based on occasions and real-time weather.",
     img: "/p4.jpg",
     iconLists: ["/nextjs.svg", "/python.svg", "/opencv.svg"],
