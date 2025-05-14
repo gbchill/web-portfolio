@@ -84,7 +84,7 @@ export const projects = [
     des: "AI tennis coach analyzing forehand technique with computer vision.",
     img: "p2.png",
     iconLists: ["nextjs.svg", "fastapi.svg", "opencv.svg"],
-    link: "https://github.com/gbchill/racket-vision",
+    link: "https://github.com/gbchill/racket-vision-showcase",
   },
   {
     id: 3,
