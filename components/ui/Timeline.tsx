@@ -37,17 +37,15 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-gray-50 dark:bg-gray-900 font-sans md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 flex flex-col items-center text-center">
-      <h2 className="text-base font-bold md:text-2xl mb-4 text-black dark:text-white max-w-4xl">
+      {/* Reduced padding from py-20 to py-8, especially at the bottom */}
+      <div className="max-w-7xl mx-auto py-8 pb-2 px-4 md:px-8 lg:px-10 flex flex-col items-center text-center">
+        <h2 className="text-base font-bold md:text-2xl text-black dark:text-white max-w-4xl">
           Milestones in My Software Developer Journey
         </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          I&apos;ve been working as a Software Developer for the past 2 years. Here&apos;s
-          a timeline of my journey.
-        </p>
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      {/* Added -mt-4 to move this section up, reducing the gap */}
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 -mt-4">
         {data.map((item, index) => (
           <div
             key={index}
@@ -57,12 +55,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-gray-900 flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-gray-900 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
+              {/* Company name on left side */}
               <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-black dark:text-white ">
                 {item.title}
               </h3>
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
+              {/* Mobile view company name */}
               <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-black dark:text-white">
                 {item.title}
               </h3>

@@ -1,10 +1,9 @@
 export const navItems = [
   { name: "Home", link: "#home" },
-  { name: "Projects", link: "#projects" },
   { name: "Experience", link: "#experience" },
+  { name: "Projects", link: "#projects" },
   { name: "Skills", link: "#skills" },
   { name: "Contact", link: "#contact" },
-
 ];
 
 export const gridItems = [
@@ -48,7 +47,6 @@ export const gridItems = [
     img: "/grid.svg",
     spareImg: "/b4.svg",
   },
-
   {
     id: 5,
     title: "Building Full-Stack Applications",
@@ -74,41 +72,37 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "Pediatric Office Automation System",
-    des: "Developed a Java application for streamlining patient check-ins, health record management, and prescription tracking using Java, SQL, and Spring.",
-    img: "p1.png", // Replace with the relevant image
-    iconLists: ["java.svg","sqlite.svg"],
-    link: "https://github.com/IWantToHelp/CSE360-Group-Project",
+    title: "Ask the CPA Guy",
+    des: "Web app for submitting accounting questions to professional CPAs.",
+    img: "p1.png",
+    iconLists: ["nextjs.svg", "ts.svg", "supabase.svg"],
+    link: "https://github.com/gbchill/ask-the-cpa-guy",
   },
   {
     id: 2,
-    title: "Automated Email Responder for Collaboration Requests",
-    des: "Created a Python script using spaCy to automate email responses for collaboration requests, enhancing communication efficiency.",
-    img: "p2.png", // Replace with the relevant image
-    iconLists: ["python.svg", "spacy.svg"],
-    link: "https://github.com/gbchill/Automated-Email-Responder-for-Collaboration-Requests",
+    title: "RacketVision",
+    des: "AI tennis coach analyzing forehand technique with computer vision.",
+    img: "p2.png",
+    iconLists: ["nextjs.svg", "fastapi.svg", "opencv.svg"],
+    link: "https://github.com/gbchill/racket-vision-showcase",
   },
   {
     id: 3,
-    title: "Hash and Graph Algorithm Toolkit",
-    des: "Developed a toolkit that combines custom hash functions with Dijkstra's shortest path algorithm, implemented in C++.",
-    img: "p3.png", // Replace with the relevant image
-    iconLists: ["isocpp.svg"],
-    link: "https://github.com/gbchill/Hash-and-Graph-Algorithm-Toolkit",
+    title: "WorkNest",
+    des: "Productivity app with focus timers and intelligent app blocking.",
+    img: "p3.png",
+    iconLists: ["electron.svg", "ts.svg", "tail.svg"],
+    link: "https://github.com/gbchill/Innovation-Hacks-2025",
   },
   {
-      "id": 4,
-      "title": "Devils Unite",
-      "des": "Developing a mobile application that serves as a social media platform for Arizona State University students, allowing them to connect through various events, meetups, and clubs. The app facilitates community building by enabling students to discover, join, and organize activities, fostering a more engaging and connected campus experience.",
-      "img": "/p4.png", // Replace with the relevant image
-      iconLists: ["/react-native.svg", "/firebase.svg", "/figma.svg"],
-      "link": "https://github.com/gbchill/Devils-Unite"
-    }    
+    id: 4,
+    title: "Lux",
+    des: "AI outfit recommender based on occasions and real-time weather.",
+    img: "/p4.jpg",
+    iconLists: ["/nextjs.svg", "/python.svg", "/opencv.svg"],
+    link: "https://github.com/ashworks1706/DevHacks-2025",
+  }    
 ];
-
-
-
-// data.js or your relevant data file
 
 export const workExperience = [
   {
@@ -118,29 +112,50 @@ export const workExperience = [
     desc: "Built an interactive HR onboarding dashboard using React, Tailwind CSS, Next.js, and integrated backend data retrieval with API Fetch.",
     className: "md:col-span-2",
     thumbnail: "/gbcsgroup.jpeg",
-},
+  },
   {
     id: 2,
-    title: "Freelance Full-Stack Developer",
-    time: "September 2022 - Present",
-    desc: "Designed and developed full-stack web applications using React, Node.js, and MongoDB, delivering scalable and robust solutions for clients.",
+    title: "Frontend Engineer Intern",
+    time: "November 2024 - Present",
+    desc: "Collaborated with the product team to design and implement user-facing features using React and TypeScript, contributing to an AI-powered music composition app.",
     className: "md:col-span-2",
-    thumbnail: "/upwork.png",
+    thumbnail: "/duet.png",
   },
+  {
+    id: 3,
+    title: "Java Tutor",
+    time: "October 2024 - Present",
+    desc: "Provided weekly tutoring sessions to support learning in Java programming, focusing on object-oriented programming, syntax, and code optimization techniques.",
+    className: "md:col-span-2",
+    thumbnail: "/tutor.png",
+  },
+  {
+    id: 4,
+    title: "DevX Solutions",
+    time: "January 2025 - Present",
+    desc: "Developing end-to-end software solutions for businesses, including UI/UX design, web development, mobile app development, and AI implementation using modern technologies like React, Node.js, and various cloud services.",
+    className: "md:col-span-2",
+    thumbnail: "/devx.png",
+  },
+  {
+    id: 5,
+    title: "Software Engineering Intern",
+    time: "June 2025 - August 2025",
+    desc: "Incoming Software Engineering Internship position at Medtronic, focusing on developing healthcare technology solutions.",
+    className: "md:col-span-2",
+    thumbnail: "/medtronic.jpg",
+  }
 ];
-
-
-
 
 export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
-    url: "https://github.com/gbchill" // Your GitHub profile URL
+    url: "https://github.com/gbchill" 
   },
   {
     id: 2,
     img: "/link.svg",
-    url: "https://linkedin.com/in/george-badu" // Your LinkedIn profile URL
+    url: "https://linkedin.com/in/george-badu"
   },
 ];
