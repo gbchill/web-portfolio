@@ -99,7 +99,7 @@ export const projects = [
     title: "Lux",
     des: "AI outfit recommender based on occasions and real-time weather.",
     img: "/p4.jpg",
-    iconLists: ["/nextjs.svg", "/python.svg", "/opencv.svg"],
+    iconLists: ["/nextjs.svg", "/python.svg", "/gemini-color.svg"],
     link: "https://github.com/ashworks1706/DevHacks-2025",
   }    
 ];
