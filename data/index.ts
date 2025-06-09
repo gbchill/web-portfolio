@@ -141,7 +141,7 @@ export const workExperience = [
     id: 5,
     title: "Software Engineering Intern",
     time: "June 2025 - August 2025",
-    desc: "Incoming Software Engineering Internship position at Medtronic, focusing on developing healthcare technology solutions.",
+    desc: "Currently developing healthcare technology solutions at Medtronic, working on innovative medical device software and contributing to life-changing healthcare technologies. Collaborating with cross-functional teams to implement robust software solutions for medical applications.",
     className: "md:col-span-2",
     thumbnail: "/medtronic.jpg",
   }
