@@ -65,8 +65,14 @@
     --ring: 240 4.9% 83.9%;
   }
 }
+
+/* BACK TO ORIGINAL - ONLY fix the layout shift */
 html, body {
   overflow-x: hidden;
+}
+
+html {
+  scrollbar-gutter: stable;
 }
 
 @layer base {

@@ -22,8 +22,8 @@ const FloatingNav = dynamic(() => import("@/components/ui/FloatingNav").then(mod
 
 const Home = () => {
   return (
-    <main className="relative flex justify-center items-center flex-col overflow-x-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full overflow-x-hidden mx-auto">
+    <main className="relative flex justify-center items-center flex-col mx-auto sm:px-10 px-5">
+      <div className="max-w-7xl w-full mx-auto">
        <FloatingNav navItems={navItems}/>
         <Intro/>
         <About/>
