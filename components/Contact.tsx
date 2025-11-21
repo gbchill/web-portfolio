@@ -14,7 +14,7 @@ const Contact = () => {
           Contact <span className="text-blue-500">Me</span> 
         </h1>
         <p className="dark:text-white font-md text-gray-700 md:mt-10 my-5 text-center">
-        Contact me today, and let&apos;s connect to discuss how I can support your team&apos;s goals.
+        Always open to connecting and exploring new opportunities.
         </p>
         <a href="mailto:georgebadulescu123@gmail.com">
           <MagicButton

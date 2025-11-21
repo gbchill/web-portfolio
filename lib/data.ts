@@ -63,6 +63,7 @@ export const skillsData = [
   "JavaScript",
   "Java",
   "C/C++",
+  "Rust",
   "HTML",
   "CSS",
   "React.js",

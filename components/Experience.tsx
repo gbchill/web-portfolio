@@ -18,7 +18,8 @@ const Experience = () => {
           {/* Display position title */}
           <h1 className="text-start text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
             {/* Check if it's DevX Solutions and show Full Stack Engineer instead */}
-            {card.title === "DevX Solutions" ? "Full Stack Engineer" : card.title}
+            {card.title === "DevX Solutions" ? "Full Stack Engineer" :
+             card.title === "The AI Society at ASU" ? "Technical Officer" : card.title}
           </h1>
           {/* Display company name */}
           <h4 className="text-start text-lg md:text-xl font-semibold text-blue-500 dark:text-blue-400 mt-1">
@@ -43,17 +44,18 @@ const Experience = () => {
     if (title === "Java Tutor") return "Freelance";
     if (title === "DevX Solutions") return "DevX Solutions";
     if (title === "Software Engineering Intern") return "Medtronic";
-    
+    if (title === "The AI Society at ASU") return "The AI Society at ASU";
+
     // Fallback to searching in the description
     const descWords = desc.split(' ');
     for (let i = 0; i < descWords.length; i++) {
-      if (descWords[i].charAt(0) === descWords[i].charAt(0).toUpperCase() && 
-          descWords[i].length > 2 && 
+      if (descWords[i].charAt(0) === descWords[i].charAt(0).toUpperCase() &&
+          descWords[i].length > 2 &&
           !["I", "API", "CSS", "UI", "UX", "HR"].includes(descWords[i])) {
         return descWords[i];
       }
     }
-    
+
     // Final fallback
     return "Company";
   }

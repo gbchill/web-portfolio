@@ -24,12 +24,13 @@ const RecentProjects = () => {
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] my-8"
           >
             <PinContainer title={item.link} href={item.link}>
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[30vh] lg:h-[30vh] mb-10">
-                <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-white dark:bg-[#13162D]">
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden mb-10">
+                <div className="relative w-full h-[250px] overflow-hidden lg:rounded-3xl bg-white dark:bg-[#13162D] flex items-center justify-center">
                   <img
                     src={item.img}
                     alt="cover"
                     className="w-full h-full object-cover"
+                    style={{ objectPosition: item.img === 'phishguard.png' ? 'center top' : 'center center' }}
                     loading="lazy"
                   />
                 </div>
