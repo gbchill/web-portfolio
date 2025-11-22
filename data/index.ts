@@ -9,7 +9,7 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "Committed to Delivering Impactful Solutions ",
+    title: "Committed to Delivering Impactful Solutions",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -72,7 +72,7 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "PhishGuard-360: Adaptive AI Phishing Defense System",
+    title: "PhishGuard-360",
     des: "Won $1,000 at Cyber 360° Spark Challenge (Google & ASU).",
     img: "phishguard.png",
     iconLists: ["python.svg", "ts.svg", "chrome.svg"],

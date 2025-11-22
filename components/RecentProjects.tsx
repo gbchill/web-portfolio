@@ -66,9 +66,9 @@ const RecentProjects = () => {
                   className="flex justify-center items-center"
                 >
                   <p className="flex lg:text-xl md:text-xs text-sm text-blue-500">
-                    Check Github
+                    View on GitHub
                   </p>
-                  <FaLocationArrow className="ms-3" color="white" />
+                  <FaLocationArrow className="ms-3 text-gray-900 dark:text-white" />
                 </a>
               </div>
             </PinContainer>

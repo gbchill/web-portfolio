@@ -64,7 +64,7 @@ const Experience = () => {
     <div className="py-16 lg:py-20 w-full"
     id="experience">
        <h1 className="heading text-center mb-12 text-gray-900 dark:text-white">
-        About <span className="text-blue-500">Work Experience</span>
+        My <span className="text-blue-500">Work Experience</span>
       </h1>
 
       <div className="w-full mt-12">

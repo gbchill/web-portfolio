@@ -12,7 +12,7 @@ export default function About() {
       id="about"
       ref={ref}
     >
-      <h1 className="heading text-center mb-8 text-gray-900 dark:text-white">
+      <h1 className="heading text-center mb-16 text-gray-900 dark:text-white">
         About <span className="text-blue-500">Me</span>
       </h1>
       <div className="max-w-3xl p-8 bg-white dark:bg-black-400 rounded-lg shadow-lg border border-white/[.2]">

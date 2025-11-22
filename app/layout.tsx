@@ -9,8 +9,8 @@ import ActiveSectionContextProvider from "@/context/active-section-context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "George | Portfolio",
-  description: "Showcasing projects and skills in full-stack development.",
+  title: "George Badulescu | Software Engineer",
+  description: "Computer Science student at ASU and software engineer with experience in full-stack development, cloud computing, and AI/ML. Built enterprise solutions at Medtronic and award-winning projects.",
 };
 
 export default function RootLayout({
