@@ -9,7 +9,7 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "Committed to Delivering Impactful Solutions ",
+    title: "Committed to Delivering Impactful Solutions",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -72,11 +72,11 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "Ask the CPA Guy",
-    des: "Web app for submitting accounting questions to professional CPAs.",
-    img: "p1.png",
-    iconLists: ["nextjs.svg", "ts.svg", "supabase.svg"],
-    link: "https://github.com/gbchill/ask-the-cpa-guy",
+    title: "PhishGuard-360",
+    des: "Won $1,000 at Cyber 360° Spark Challenge (Google & ASU).",
+    img: "phishguard.png",
+    iconLists: ["python.svg", "ts.svg", "chrome.svg"],
+    link: "https://github.com/ashworks1706/PhisGuard-360",
   },
   {
     id: 2,
@@ -84,7 +84,7 @@ export const projects = [
     des: "AI tennis coach analyzing forehand technique with computer vision.",
     img: "p2.png",
     iconLists: ["nextjs.svg", "fastapi.svg", "opencv.svg"],
-    link: "https://github.com/gbchill/racket-vision-showcase",
+    link: "https://github.com/gbchill/racket-vision",
   },
   {
     id: 3,
@@ -116,7 +116,7 @@ export const workExperience = [
   {
     id: 2,
     title: "Frontend Engineer Intern",
-    time: "November 2024 - Present",
+    time: "November 2024 - February 2025",
     desc: "Collaborated with the product team to design and implement user-facing features using React and TypeScript, contributing to an AI-powered music composition app.",
     className: "md:col-span-2",
     thumbnail: "/duet.png",
@@ -132,7 +132,7 @@ export const workExperience = [
   {
     id: 4,
     title: "DevX Solutions",
-    time: "January 2025 - Present",
+    time: "January 2025 - June 2025",
     desc: "Developing end-to-end software solutions for businesses, including UI/UX design, web development, mobile app development, and AI implementation using modern technologies like React, Node.js, and various cloud services.",
     className: "md:col-span-2",
     thumbnail: "/devx.png",
@@ -141,9 +141,17 @@ export const workExperience = [
     id: 5,
     title: "Software Engineering Intern",
     time: "June 2025 - August 2025",
-    desc: "Currently developing healthcare technology solutions at Medtronic, working on innovative medical device software and contributing to life-changing healthcare technologies. Collaborating with cross-functional teams to implement robust software solutions for medical applications.",
+    desc: "Developed enterprise DMAS dashboard processing 10,000+ daily test files across 5 global facilities using Next.js, TypeScript, and ASP.NET Core, reducing error detection time by 75%. Architected high-performance analytics system handling 1M+ Oracle database records with sub-second response times using Dapper ORM and optimized SQL queries. Deployed production application to Windows Server with IIS configuration.",
     className: "md:col-span-2",
     thumbnail: "/medtronic.jpg",
+  },
+  {
+    id: 6,
+    title: "The AI Society at ASU",
+    time: "March 2025 - Present",
+    desc: "Developed internal tools for event management and member engagement using React and Node.js. Led AI workshops and delivered technical lectures to 100+ students on machine learning concepts.",
+    className: "md:col-span-2",
+    thumbnail: "/aisociety.png",
   }
 ];
 

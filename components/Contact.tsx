@@ -2,7 +2,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 import { socialMedia } from "@/data/index";
 import MagicButton from "./MagicButton";
-import { FaGithubSquare } from "react-icons/fa";
+import { FaGithubSquare, FaFileAlt } from "react-icons/fa";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 
 const Contact = () => {
@@ -14,7 +14,7 @@ const Contact = () => {
           Contact <span className="text-blue-500">Me</span> 
         </h1>
         <p className="dark:text-white font-md text-gray-700 md:mt-10 my-5 text-center">
-        Contact me today, and let&apos;s connect to discuss how I can support your team&apos;s goals.
+        Always open to connecting and exploring new opportunities.
         </p>
         <a href="mailto:georgebadulescu123@gmail.com">
           <MagicButton
@@ -44,6 +44,15 @@ const Contact = () => {
   target="_blank"
 >
   <FaGithubSquare />
+</a>
+
+<a
+  className="bg-white shadow-lg p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-black-400 dark:text-white/60 border border-white/[.2] text-[1.35rem]"
+  href="/George_Badulescu_Resume.pdf"
+  target="_blank"
+  aria-label="View Resume"
+>
+  <FaFileAlt />
 </a>
 
         </div>

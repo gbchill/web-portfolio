@@ -23,9 +23,9 @@ export const PinContainer = (props: PinContainerProps) => {
     // Just include the card content without the top title link
     React.createElement(
       "div",
-      { 
+      {
         key: "card-content",
-        className: "p-4 rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-300 overflow-hidden"
+        className: "p-4 rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.2] group-hover/pin:border-white/[0.3] transition duration-300 overflow-hidden bg-white dark:bg-black-400"
       },
       React.createElement(
         "div",

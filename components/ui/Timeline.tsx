@@ -34,7 +34,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-full bg-gray-50 dark:bg-gray-900 font-sans md:px-10"
+      className="w-full font-sans md:px-10"
       ref={containerRef}
     >
       {/* Reduced padding from py-20 to py-8, especially at the bottom */}
