@@ -8,7 +8,7 @@ const Experience = () => {
     title: getCompanyName(card.title, card.desc),
     
     content: (
-      <div className="flex flex-col lg:flex-row lg:items-center p-4 md:p-6 lg:p-8 gap-4 lg:gap-6">
+      <div className="flex flex-col lg:flex-row lg:items-center p-4 md:p-6 lg:p-8 gap-4 lg:gap-6 bg-white dark:bg-black-400 rounded-lg shadow-lg border border-white/[.2]">
         <img
           src={card.thumbnail}
           alt={card.title}
@@ -61,7 +61,7 @@ const Experience = () => {
   }
 
   return (
-    <div className="py-16 lg:py-20 w-full bg-gray-50 dark:bg-gray-900"
+    <div className="py-16 lg:py-20 w-full"
     id="experience">
        <h1 className="heading text-center mb-12 text-gray-900 dark:text-white">
         About <span className="text-blue-500">Work Experience</span>

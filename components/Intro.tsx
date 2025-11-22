@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare } from "react-icons/fa";
+import { FaGithubSquare, FaFileAlt } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
@@ -37,7 +37,7 @@ export default function Intro() {
               height={180}
               quality="95"
               priority={true}
-              className="h-55 w-55 rounded-full object-cover border-[0.35rem] border-white dark:border-black shadow-xl"
+              className="h-[180px] w-[180px] rounded-full object-cover object-center border-[0.35rem] border-white dark:border-black shadow-xl"
             />
           </motion.div>
         </div>
@@ -48,10 +48,9 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I&apos;m George Badulescu.</span> I&apos;m a{" "}
-        <span className="font-bold">software developer</span> and{" "}
-        <span className="font-bold">Computer Science student</span> at Arizona State University, with{" "}
-        <span className="font-bold">expertise in JavaScript and Java</span>.
+        <span className="font-bold">Hey, I&apos;m George.</span> I&apos;m a{" "}
+        <span className="font-bold">Computer Science student</span> at ASU and a{" "}
+        <span className="font-bold">software engineer</span> who enjoys solving problems and building software.
 
       </motion.h1>
 
@@ -89,6 +88,15 @@ export default function Intro() {
   target="_blank"
 >
   <FaGithubSquare />
+</a>
+
+<a
+  className="bg-white shadow-lg p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-black-400 dark:text-white/60 border border-white/[.2] text-[1.35rem]"
+  href="/George_Badulescu_Resume.pdf"
+  target="_blank"
+  aria-label="View Resume"
+>
+  <FaFileAlt />
 </a>
       </motion.div>
     </section>
