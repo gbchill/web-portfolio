@@ -33,6 +33,19 @@ const nextConfig = {
                         value: 'max-age=31536000; includeSubDomains'
                     }
                 ]
+            },
+            {
+                source: '/:path*.pdf',
+                headers: [
+                    {
+                        key: 'Content-Type',
+                        value: 'application/pdf'
+                    },
+                    {
+                        key: 'Content-Disposition',
+                        value: 'inline'
+                    }
+                ]
             }
         ];
     },
