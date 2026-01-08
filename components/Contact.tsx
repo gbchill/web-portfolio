@@ -50,6 +50,7 @@ const Contact = () => {
   className="bg-white shadow-lg p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-black-400 dark:text-white/60 border border-white/[.2] text-[1.35rem]"
   href="/George_Badulescu_Resume.pdf"
   target="_blank"
+  rel="noopener noreferrer"
   aria-label="View Resume"
 >
   <FaFileAlt />
