@@ -1,87 +1,68 @@
 "use client";
+
 import React, { useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import type { SectionName } from "@/lib/types";
 
 export const FloatingNav = ({
   navItems,
   className,
 }: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
+  navItems: { name: string; link: string; icon?: JSX.Element }[];
   className?: string;
 }) => {
+  const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const { scrollYProgress } = useScroll();
+  const [scrolled, setScrolled] = useState(false);
 
-  // Set true for the initial state so that nav bar is visible in the hero section
-  const [visible, setVisible] = useState(true);
-
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    const previous = scrollYProgress.getPrevious();
-
-    if (current !== undefined && previous !== undefined) {
-      let direction = current - previous;
-
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(true);
-      } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-      }
-    }
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    setScrolled(v > 0.02);
   });
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        initial={{
-          opacity: 1,
-          y: -100,
-        }}
-        animate={{
-          y: visible ? 0 : -100,
-          opacity: visible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.2,
-        }}
-        className={cn(
-          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-full shadow-lg border items-center justify-center space-x-4",
-          "bg-white text-black border-gray-200",
-          "dark:bg-black-400 dark:text-white dark:border-gray-800",
-          className
-        )}
-        style={{
-          backdropFilter: "blur(16px) saturate(180%)",
-        }}
-      >
-        {navItems.map((navItem, idx) => (
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+      className={cn(
+        "fixed inset-x-0 top-3 z-[5000] mx-auto flex w-fit max-w-[94vw] items-center gap-0.5 overflow-x-auto border-2 border-ink p-1 transition-[background-color,box-shadow] duration-300 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        scrolled ? "bg-canvas shadow-[4px_4px_0_0_var(--ink)]" : "bg-canvas/85 backdrop-blur-sm",
+        className
+      )}
+    >
+      {navItems.map((navItem) => {
+        const active = activeSection === navItem.name;
+        return (
           <Link
-          key={`link=${idx}`}
-          href={navItem.link}
-          className={cn(
-            "relative items-center flex space-x-1",
-            "text-black hover:scale-110", // Added font-bold here
-            "dark:text-white"
-          )}
-        >        
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="text-sm cursor-pointer">{navItem.name}</span>
+            key={navItem.link}
+            href={navItem.link}
+            onClick={() => {
+              setActiveSection(navItem.name as SectionName);
+              setTimeOfLastClick(Date.now());
+            }}
+            className="relative whitespace-nowrap px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-wide transition-colors duration-200"
+          >
+            {active && (
+              <motion.span
+                layoutId="nav-active"
+                className="absolute inset-0 z-0 bg-brand"
+                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+              />
+            )}
+            <span
+              className={cn(
+                "relative z-10 transition-colors duration-200",
+                active ? "text-white" : "text-ink hover:text-brand"
+              )}
+            >
+              {navItem.name}
+            </span>
           </Link>
-        ))}
-      </motion.div>
-    </AnimatePresence>
+        );
+      })}
+    </motion.nav>
   );
 };

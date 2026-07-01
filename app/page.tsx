@@ -1,37 +1,24 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
 import Skills from "@/components/ui/Skills";
 import Intro from "@/components/Intro";
 import About from "@/components/About";
+import Experience from "@/components/Experience";
+import RecentProjects from "@/components/RecentProjects";
+import Contact from "@/components/Contact";
+import { FloatingNav } from "@/components/ui/FloatingNav";
+import { ScrollProgress } from "@/components/ui/motion";
 import { navItems } from "@/data/index";
-
-
-const Hero = dynamic(() => import("@/components/Hero"), { ssr: false });
-const Grid = dynamic(() => import("@/components/Grid"), { ssr: false });
-const Contact = dynamic(() => import("@/components/Contact"), { ssr: false });
-const Approach = dynamic(() => import("@/components/Approach"), { ssr: false });
-const Experience = dynamic(() => import("@/components/Experience"), { ssr: false });
-const RecentProjects = dynamic(() => import("@/components/RecentProjects"), { ssr: false });
-
-// Dynamically import FloatingNav with SSR disabled and correct typing
-const FloatingNav = dynamic(() => import("@/components/ui/FloatingNav").then(mod => mod.FloatingNav), {
-  ssr: false, // Disable server-side rendering for this component
-});
 
 const Home = () => {
   return (
-    <main className="relative flex justify-center items-center flex-col mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full mx-auto">
-       <FloatingNav navItems={navItems}/>
-        <Intro/>
-        <About/>
-        <Experience />
-        <RecentProjects />
-        <Skills/>
-        <Contact />
-      </div>
+    <main className="relative mx-auto w-full max-w-3xl px-6 sm:px-8">
+      <ScrollProgress />
+      <FloatingNav navItems={navItems} />
+      <Intro />
+      <About />
+      <Experience />
+      <RecentProjects />
+      <Skills />
+      <Contact />
     </main>
   );
 };

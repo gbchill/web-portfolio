@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import ThemeSwitch from "@/components/Theme-Switch";
-import DynamicBackground from '@/components/ui/DynamicBackground'
+import Background from "@/components/ui/Background";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 
-const inter = Inter({ subsets: ["latin"] });
+const grotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-grotesk",
+});
+const mono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
   title: "George Badulescu | Software Engineer",
@@ -20,20 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/gb-logo.png" sizes="any" />
-      </head>
-      <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative mx-auto dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
-      >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          {/* Dynamic animated background */}
-          <DynamicBackground />
-
+      <body className={`${grotesk.variable} ${mono.variable} font-sans relative`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <Background />
           <ActiveSectionContextProvider>
-               {children}
-              <ThemeSwitch/>
-           </ActiveSectionContextProvider>
+            {children}
+            <ThemeSwitch />
+          </ActiveSectionContextProvider>
         </ThemeProvider>
       </body>
     </html>

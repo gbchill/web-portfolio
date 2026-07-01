@@ -1,65 +1,59 @@
-import { FaLocationArrow } from "react-icons/fa6";
+"use client";
 
-import { socialMedia } from "@/data/index";
-import MagicButton from "./MagicButton";
-import { FaGithubSquare, FaFileAlt } from "react-icons/fa";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import React from "react";
+import { BsLinkedin, BsGithub, BsEnvelope } from "react-icons/bs";
+import { useSectionInView } from "@/lib/hooks";
+import Reveal from "@/components/ui/Reveal";
+import { SectionHeading, Magnetic } from "@/components/ui/motion";
 
-const Contact = () => {
+const links = [
+  { label: "Email", href: "mailto:georgebadulescu123@gmail.com", icon: BsEnvelope },
+  { label: "LinkedIn", href: "https://linkedin.com/in/george-badu", icon: BsLinkedin },
+  { label: "GitHub", href: "https://github.com/gbchill", icon: BsGithub },
+];
+
+export default function Contact() {
+  const { ref } = useSectionInView("Contact");
+
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
+    <footer ref={ref} id="contact" className="section pb-16">
+      <SectionHeading>Get In Touch</SectionHeading>
 
-      <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Contact <span className="text-blue-500">Me</span> 
-        </h1>
-        <p className="dark:text-white font-md text-gray-700 md:mt-10 my-5 text-center">
-        Always open to connecting and exploring new opportunities.
+      <Reveal delay={0.05}>
+        <p className="mt-4 max-w-xl text-base leading-relaxed text-subtle">
+          I'm open to full time software engineering roles and interesting
+          projects. The fastest way to reach me is email.
         </p>
-        <a href="mailto:georgebadulescu123@gmail.com">
-          <MagicButton
-            title="Let's connect"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
-      </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2025 George Badulescu
+      </Reveal>
+
+      <Reveal delay={0.1}>
+        <Magnetic
+          href="mailto:georgebadulescu123@gmail.com"
+          className="mt-6 border-2 border-ink bg-brand px-6 py-3 font-mono text-sm font-bold uppercase text-white"
+        >
+          Email Me ↗
+        </Magnetic>
+      </Reveal>
+
+      <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t-2 border-ink pt-6 sm:flex-row sm:items-center">
+        <p className="font-mono text-xs uppercase tracking-wide text-subtle">
+          © 2026 George Badulescu
         </p>
-
-        <div className="flex items-center md:gap-3 gap-6">
-        <a
-  className="bg-white shadow-lg p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-black-400 border border-white/[.2] dark:text-white/60 text-[1.35rem]"
-  href="https://linkedin.com/in/george-badu"
-  target="_blank"
->
-  <BsLinkedin />
-</a>
-
-<a
-  className="bg-white shadow-lg p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-black-400 dark:text-white/60 border border-white/[.2] text-[1.35rem]"
-  href="https://github.com/gbchill"
-  target="_blank"
->
-  <FaGithubSquare />
-</a>
-
-<a
-  className="bg-white shadow-lg p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-black-400 dark:text-white/60 border border-white/[.2] text-[1.35rem]"
-  href="/George_Badulescu_Resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="View Resume"
->
-  <FaFileAlt />
-</a>
-
+        <div className="flex items-center gap-1">
+          {links.map(({ label, href, icon: Icon }) => (
+            <a
+              key={label}
+              href={href}
+              aria-label={label}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-10 w-10 items-center justify-center border-2 border-ink text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-ink hover:text-canvas active:translate-y-0"
+            >
+              <Icon className="h-[1.05rem] w-[1.05rem]" />
+            </a>
+          ))}
         </div>
       </div>
     </footer>
   );
-};
-
-export default Contact;
+}
