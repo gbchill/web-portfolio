@@ -1,169 +1,171 @@
 export const navItems = [
   { name: "Home", link: "#home" },
+  { name: "About", link: "#about" },
   { name: "Experience", link: "#experience" },
   { name: "Projects", link: "#projects" },
   { name: "Skills", link: "#skills" },
   { name: "Contact", link: "#contact" },
 ];
 
-export const gridItems = [
+export type WorkExperience = {
+  id: number;
+  role: string;
+  company: string;
+  location: string;
+  time: string;
+  summary: string;
+  stack: string[];
+  link?: string; // optional "learn more" link; company name becomes clickable when set
+  points: string[];
+};
+
+export const workExperience: WorkExperience[] = [
   {
     id: 1,
-    title: "Committed to Delivering Impactful Solutions",
-    description: "",
-    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-    imgClassName: "w-full h-full",
-    titleClassName: "justify-end",
-    img: "/b1.svg",
-    spareImg: "",
+    role: "Founder",
+    company: "Racket Vision",
+    location: "Chandler, AZ",
+    time: "Mar 2026 – Present",
+    summary:
+      "Founded a B2B SaaS that replaces pen and paper demo tracking at tennis and pickleball shops, now live in production at its first shop with 300+ users and $7,500+ in transactions processed.",
+    stack: ["Next.js", "TypeScript", "Supabase", "AWS", "Stripe"],
+    link: "https://racket-vision.com",
+    points: [
+      "Founded a B2B SaaS that replaces pen and paper demo tracking at tennis and pickleball pro shops, running in production at Tennis and Pickleball Cabana with 300+ users, 150 net new signups per month, and $7,500+ in shop transactions through Stripe checkout.",
+      "Architected and shipped the full stack platform with Next.js, TypeScript, Supabase, and AWS Amplify, cutting demo check in from multi minute paper logging to a 12 second flow and tracking 400+ rackets and paddles on a traffic light dashboard with zero losses since launch.",
+      "Automated overdue demo recovery with AWS EventBridge schedulers, SNS text reminders, and Stripe late fee billing, removing manual front desk chase work and enabling 5 minute staff onboarding with no customer app required.",
+    ],
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "",
-    spareImg: "",
+    role: "Technical Officer",
+    company: "The AI Society at ASU",
+    location: "Tempe, AZ",
+    time: "Aug 2025 – May 2026",
+    summary:
+      "Led AI and machine learning workshops and technical lectures for 100+ students, mentoring members on AI projects and initiatives.",
+    stack: ["React", "Node.js"],
+    points: [
+      "Designed and led AI workshops on machine learning and neural networks for 300+ students.",
+      "Built internal React and Node.js tools that automated event registration and workshop coordination, scaling the club's capacity by 3x.",
+    ],
   },
   {
     id: 3,
-    title: "My tech stack",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-center",
-    img: "",
-    spareImg: "",
+    role: "Software Engineering Intern",
+    company: "Medtronic",
+    location: "Tempe, AZ",
+    time: "Jun 2025 – Aug 2025",
+    summary:
+      "Built a manufacturing analytics dashboard across five facilities with sub 2 second traceability search over 1M+ records.",
+    stack: ["Next.js", "TypeScript", "C#", "Oracle"],
+    points: [
+      "Built a full stack manufacturing analytics and quality control dashboard for five international facilities using Next.js, TypeScript, C#, and Oracle, cutting manual error investigation effort by over 90 percent.",
+      "Implemented traceability search across 1M+ Oracle test and log records with sub 2 second lookups, cutting investigation time by 70 percent.",
+      "Automated monitoring of 10,000+ daily test files with alert thresholds for load failures, improving incident response to data load issues by 85 percent.",
+    ],
   },
   {
     id: 4,
-    title: "Passionate about Technology and Development",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "/grid.svg",
-    spareImg: "/b4.svg",
+    role: "Volunteer Software Developer",
+    company: "Opportunity Hack",
+    location: "Remote",
+    time: "Jul 2025",
+    summary:
+      "Engineered a scholarship platform for 1,200+ students across 15 nonprofits, processing $70K+ in scholarships.",
+    stack: ["Next.js", "React", "MongoDB"],
+    points: [
+      "Engineered a scholarship management platform serving 1,200+ students across 15 nonprofits using Next.js, React, and MongoDB, processing over $70,000 in scholarships.",
+      "Built an admin dashboard with role based access control, CRUD workflows, and analytics exports that cut admin effort by 5 hours per week.",
+    ],
   },
   {
     id: 5,
-    title: "Building Full-Stack Applications",
-    description: "In development",
-    className: "md:col-span-3 md:row-span-2",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-    titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/b5.svg",
-    spareImg: "/grid.svg",
+    role: "Full Stack Engineer",
+    company: "DevX Solutions",
+    location: "Tempe, AZ",
+    time: "Jan 2025 – Jun 2025",
+    summary:
+      "Founding engineer building custom software solutions for small businesses, from prototyping to shipping web and mobile apps for 5+ clients on React, Node, and Supabase.",
+    stack: ["React", "Node.js", "Supabase", "AWS"],
+    points: [
+      "Worked as one of four founding engineers, running client discovery and weekly feedback sessions, then building and deploying web and mobile apps for 5+ clients using React, Node.js, TypeScript, Supabase, and AWS, including a booking platform with 50+ active users.",
+      "Designed PostgreSQL and Supabase schemas with row level security and JWT based access control for a SmartMoving integrated moving quote calculator.",
+    ],
   },
   {
     id: 6,
-    title: "Looking to Connect on an Exciting Project?",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-    img: "",
-    spareImg: "",
+    role: "Software Developer Intern",
+    company: "GBCS Group",
+    location: "Remote",
+    time: "Jan 2024 – May 2024",
+    summary:
+      "Built an HR onboarding dashboard and tuned PostgreSQL queries down to 10 ms.",
+    stack: ["React", "Next.js", "PostgreSQL", "Docker"],
+    points: [
+      "Built an HR onboarding dashboard with React, Next.js, and Tailwind CSS, and set up automated testing and deployment with GitHub Actions and Docker.",
+      "Tuned PostgreSQL performance with Prisma ORM through schema refinement, query tuning, and indexing, bringing key query time down to 10 ms.",
+    ],
   },
 ];
 
-export const projects = [
+export type Project = {
+  id: number;
+  title: string;
+  description: string;
+  tags: string[];
+  link?: string;
+  img?: string;
+};
+
+export const projects: Project[] = [
+  {
+    id: 4,
+    title: "ChessMate Bot",
+    description:
+      "An autonomous chess playing robot on a 6 DOF arm using Python, ikpy inverse kinematics, and Stockfish, with an ArUco and OpenCV vision pipeline that detects moves and plays them at under 5 second latency and over 98 percent pick and place success.",
+    tags: ["Python", "OpenCV", "Stockfish", "Robotics"],
+    img: "/chessmate.jpeg",
+    link: "https://github.com/anshulv12/chess_bot",
+  },
   {
     id: 1,
-    title: "PhishGuard-360",
-    des: "Won $1,000 at Cyber 360° Spark Challenge (Google & ASU).",
-    img: "phishguard.png",
-    iconLists: ["python.svg", "ts.svg", "chrome.svg"],
+    title: "PhishGuard 360",
+    description:
+      "A three layer AI phishing defense built in 24 hours that won $1,000 at the Cyber 360° Spark Challenge. Detects malicious URLs with 94 percent accuracy across 50,000+ samples using a fine tuned DistilBERT classifier at 92 percent F1, plus a RAG based LLM investigator that writes threat reports.",
+    tags: ["Next.js", "Python", "Flask", "DistilBERT"],
+    img: "/phishguard.png",
     link: "https://github.com/ashworks1706/PhisGuard-360",
   },
   {
     id: 2,
-    title: "RacketVision",
-    des: "AI tennis coach analyzing forehand technique with computer vision.",
-    img: "p2.png",
-    iconLists: ["nextjs.svg", "fastapi.svg", "opencv.svg"],
-    link: "https://github.com/gbchill/racket-vision",
+    title: "Ask the CPA Guy",
+    description:
+      "A web app where anyone can submit accounting and QuickBooks questions and get clear answers from a certified CPA, no account needed. Every question is personally reviewed and the answer is sent to your inbox, with AI assisted drafting to speed up the turnaround.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+    img: "/cpa-guy.png",
+    link: "https://github.com/gbchill/ask-the-cpa-guy",
   },
   {
     id: 3,
-    title: "WorkNest",
-    des: "Productivity app with focus timers and intelligent app blocking.",
-    img: "p3.png",
-    iconLists: ["electron.svg", "ts.svg", "tail.svg"],
-    link: "https://github.com/gbchill/Innovation-Hacks-2025",
+    title: "RISC-V Emulator",
+    description:
+      "Worked on a 5 person Agile capstone team with ASU's School of Computing building a web based RISC-V emulator inside the VIPLE environment, plus a MIPS to RISC-V conversion service that lets students compare the two architectures side by side to learn computer architecture.",
+    tags: ["C#", ".NET", "Compilers", "Education"],
+    img: "/riscv.jpg",
+    link: "https://showcase.asucapstone.com/survey/10635",
   },
-  {
-    id: 4,
-    title: "Lux",
-    des: "AI outfit recommender based on occasions and real-time weather.",
-    img: "/p4.jpg",
-    iconLists: ["/nextjs.svg", "/python.svg", "/gemini-color.svg"],
-    link: "https://github.com/ashworks1706/DevHacks-2025",
-  }    
-];
-
-export const workExperience = [
-  {
-    id: 1,
-    title: "The AI Society at ASU",
-    time: "August 2025 - Present",
-    desc: "Developed internal tools for event management and member engagement using React and Node.js. Led AI workshops and delivered technical lectures to 100+ students on machine learning concepts.",
-    className: "md:col-span-2",
-    thumbnail: "/aisociety.png",
-  },
-  {
-    id: 2,
-    title: "Software Engineering Intern",
-    time: "June 2025 - August 2025",
-    desc: "Developed enterprise DMAS dashboard processing 10,000+ daily test files across 5 global facilities using Next.js, TypeScript, and ASP.NET Core, reducing error detection time by 75%. Architected high-performance analytics system handling 1M+ Oracle database records with sub-second response times using Dapper ORM and optimized SQL queries. Deployed production application to Windows Server with IIS configuration.",
-    className: "md:col-span-2",
-    thumbnail: "/medtronic.jpg",
-  },
-  {
-    id: 3,
-    title: "DevX Solutions",
-    time: "January 2025 - June 2025",
-    desc: "Developing end-to-end software solutions for businesses, including UI/UX design, web development, mobile app development, and AI implementation using modern technologies like React, Node.js, and various cloud services.",
-    className: "md:col-span-2",
-    thumbnail: "/devx.png",
-  },
-  {
-    id: 4,
-    title: "Java Tutor",
-    time: "October 2024 - May 2025",
-    desc: "Provided weekly tutoring sessions to support learning in Java programming, focusing on object-oriented programming, syntax, and code optimization techniques.",
-    className: "md:col-span-2",
-    thumbnail: "/tutor.png",
-  },
-  {
-    id: 5,
-    title: "Frontend Engineer Intern",
-    time: "November 2024 - February 2025",
-    desc: "Collaborated with the product team to design and implement user-facing features using React and TypeScript, contributing to an AI-powered music composition app.",
-    className: "md:col-span-2",
-    thumbnail: "/duet.png",
-  },
-  {
-    id: 6,
-    title: "Software Developer Intern",
-    time: "January 2024 - May 2024",
-    desc: "Built an interactive HR onboarding dashboard using React, Tailwind CSS, Next.js, and integrated backend data retrieval with API Fetch.",
-    className: "md:col-span-2",
-    thumbnail: "/gbcsgroup.jpeg",
-  }
 ];
 
 export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
-    url: "https://github.com/gbchill" 
+    url: "https://github.com/gbchill",
   },
   {
     id: 2,
     img: "/link.svg",
-    url: "https://linkedin.com/in/george-badu"
+    url: "https://linkedin.com/in/george-badu",
   },
 ];

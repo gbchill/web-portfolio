@@ -1,82 +1,94 @@
 "use client";
 
-import { FaLocationArrow } from "react-icons/fa6";
+import React from "react";
+import Image from "next/image";
 import { projects } from "@/data";
-import dynamic from 'next/dynamic';
+import { useSectionInView } from "@/lib/hooks";
+import Reveal from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/ui/motion";
 
-// Dynamically import PinContainer with SSR disabled
-const PinContainer = dynamic(() =>
-  import("./ui/Pin").then((mod) => mod.PinContainer),
-  { ssr: false }
-);
+export default function RecentProjects() {
+  const { ref } = useSectionInView("Projects");
 
-const RecentProjects = () => {
   return (
-    <div className="py-20" id="projects">
-      <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-blue-500">recent projects</span>
-      </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
-        {projects.map((item) => (
-          <div
-            key={item.id}
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] my-8"
-          >
-            <PinContainer title={item.link} href={item.link}>
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden mb-10">
-                <div className="relative w-full h-[250px] overflow-hidden lg:rounded-3xl bg-white dark:bg-[#13162D] flex items-center justify-center">
-                  <img
-                    src={item.img}
-                    alt="cover"
-                    className="w-full h-full object-cover"
-                    style={{ objectPosition: item.img === 'phishguard.png' ? 'center top' : 'center center' }}
-                    loading="lazy"
-                  />
-                </div>
-              </div>
+    <section ref={ref} id="projects" className="section border-b-2 border-ink">
+      <SectionHeading>Projects</SectionHeading>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                {item.title}
-              </h1>
-
-              <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2 mt-4 mb-4 text-black dark:text-[#BEC1DD]">
-                {item.des}
-              </p>
-
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {item.iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border shadow-lg border-white/[.2] rounded-full bg-white dark:bg-gray-900 lg:w-10 lg:h-10 w-10 h-10 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
+      <div className="mt-10 grid gap-0 sm:grid-cols-2">
+        {projects.map((project, i) => {
+          const isLink = Boolean(project.link);
+          const inner = (
+            <>
+              <span className="absolute inset-0 z-0 origin-bottom scale-y-0 bg-brand transition-transform duration-300 ease-out group-hover:scale-y-100" />
+              <div className="relative z-10 flex h-full flex-col transition-colors duration-300 group-hover:text-white">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="text-xl font-bold uppercase text-ink group-hover:text-white">
+                    {project.title}
+                  </h3>
+                  {isLink && (
+                    <span
+                      aria-hidden
+                      className="-translate-x-1 font-mono text-lg text-brand opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-white group-hover:opacity-100"
                     >
-                      <img src={icon} alt="icon" className="p-2" />
-                    </div>
+                      ↗
+                    </span>
+                  )}
+                </div>
+
+                <p className="mt-2 text-sm leading-relaxed text-subtle group-hover:text-white">
+                  {project.description}
+                </p>
+
+                {project.img && (
+                  <div className="relative mt-4 aspect-[16/10] overflow-hidden border-2 border-ink">
+                    <Image
+                      src={project.img}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                    />
+                  </div>
+                )}
+
+                <div className="mt-4 flex flex-wrap gap-3 font-mono text-xs uppercase">
+                  {project.tags.map((t, idx) => (
+                    <span
+                      key={t}
+                      className="text-brand transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:text-white"
+                      style={{ transitionDelay: `${idx * 40}ms` }}
+                    >
+                      {t}
+                    </span>
                   ))}
                 </div>
 
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex justify-center items-center"
-                >
-                  <p className="flex lg:text-xl md:text-xs text-sm text-blue-500">
-                    View on GitHub
-                  </p>
-                  <FaLocationArrow className="ms-3 text-gray-900 dark:text-white" />
-                </a>
+                {isLink && (
+                  <span className="mt-4 inline-block overflow-hidden font-mono text-[11px] font-bold uppercase tracking-wide text-brand group-hover:text-white">
+                    <span className="inline-block -translate-x-[120%] transition-transform duration-300 ease-out group-hover:translate-x-0">
+                      → View project
+                    </span>
+                  </span>
+                )}
               </div>
-            </PinContainer>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+            </>
+          );
 
-export default RecentProjects;
+          const cls = `group relative block h-full overflow-hidden border-2 border-ink p-6 ${i % 2 === 1 ? "sm:border-l-0" : ""} ${i >= 2 ? "border-t-0" : ""}`;
+
+          return (
+            <Reveal key={project.id} delay={Math.min(i, 3) * 0.05}>
+              {isLink ? (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className={cls}>
+                  {inner}
+                </a>
+              ) : (
+                <div className={cls}>{inner}</div>
+              )}
+            </Reveal>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
