@@ -32,13 +32,14 @@ export default function About() {
             At Medtronic I built a manufacturing analytics dashboard that cut
             quality investigations from hours to minutes across several
             facilities. At Opportunity Hack I helped run a scholarship platform
-            that got real money into students' hands.
+            that got real money into students’ hands.
           </p>
         </Reveal>
         <Reveal delay={0.15}>
           <p>
             Right now I am building Racket Vision, a SaaS for racket sport shops
-            that just signed its first shop. Away from the keyboard I play guitar
+            that is live in production with 230+ customers and 700+ rackets
+            tracked. Away from the keyboard I play guitar
             and spend most of my free time on the tennis and pickleball courts,
             which is honestly where the idea for Racket Vision came from. I am
             looking for full time software engineering roles where I can keep

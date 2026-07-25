@@ -27,12 +27,12 @@ export const workExperience: WorkExperience[] = [
     location: "Chandler, AZ",
     time: "Mar 2026 – Present",
     summary:
-      "Founded a B2B SaaS that replaces pen and paper demo tracking at tennis and pickleball shops, now live in production at its first shop with 300+ users and $7,500+ in transactions processed.",
+      "Founded a B2B SaaS that replaces pen and paper demo tracking at tennis and pickleball shops. Live in production with 230+ customers, 700+ rackets tracked, and $18K+ in demo deposits and racket sales.",
     stack: ["Next.js", "TypeScript", "Supabase", "AWS", "Stripe"],
     link: "https://racket-vision.com",
     points: [
-      "Founded a B2B SaaS that replaces pen and paper demo tracking at tennis and pickleball pro shops, running in production at Tennis and Pickleball Cabana with 300+ users, 150 net new signups per month, and $7,500+ in shop transactions through Stripe checkout.",
-      "Architected and shipped the full stack platform with Next.js, TypeScript, Supabase, and AWS Amplify, cutting demo check in from multi minute paper logging to a 12 second flow and tracking 400+ rackets and paddles on a traffic light dashboard with zero losses since launch.",
+      "Founded a B2B SaaS that replaces pen and paper demo tracking at tennis and pickleball pro shops, running in production with 230+ customers and $18K+ in demo deposits and racket sales through Stripe checkout.",
+      "Architected and shipped the full stack platform with Next.js, TypeScript, Supabase, and AWS Amplify, cutting demo check in from multi minute paper logging to a 12 second flow and tracking 700+ rackets and paddles on a traffic light dashboard.",
       "Automated overdue demo recovery with AWS EventBridge schedulers, SNS text reminders, and Stripe late fee billing, removing manual front desk chase work and enabling 5 minute staff onboarding with no customer app required.",
     ],
   },
